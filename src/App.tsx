@@ -23,6 +23,7 @@ import EmployerDashboard from "./pages/employer/Dashboard";
 import ManageJobs from "./pages/employer/ManageJobs";
 import CreateJob from "./pages/employer/CreateJob";
 import JobApplicants from "./pages/employer/JobApplicants";
+import Applicants from "./pages/employer/Applicants";
 import AdminDashboard from "./pages/admin/Dashboard";
 
 const queryClient = new QueryClient();
@@ -69,6 +70,7 @@ const App = () => (
                 <Route path="/employer/jobs" element={<ManageJobs />} />
                 <Route path="/employer/jobs/create" element={<CreateJob />} />
                 <Route path="/employer/jobs/:id/applicants" element={<JobApplicants />} />
+                <Route path="/employer/applicants" element={<Applicants />} />
               </Route>
               
               {/* Admin Routes */}
