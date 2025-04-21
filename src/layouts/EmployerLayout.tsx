@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { SidebarProvider } from "@/components/ui/sidebar";
 import EmployerSidebar from '@/components/EmployerSidebar';
 import Navbar from '@/components/Navbar';
+import { Toaster } from "@/components/ui/toaster";
 
 const EmployerLayout = () => {
   return (
@@ -15,6 +16,7 @@ const EmployerLayout = () => {
             <Outlet />
           </main>
         </div>
+        <Toaster />
       </div>
     </SidebarProvider>
   );

@@ -1,11 +1,10 @@
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import { JobsProvider } from "./contexts/JobsContext";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster as Sonner } from "@/components/ui/sonner";
 import PublicLayout from "./layouts/PublicLayout";
 import EmployerLayout from "./layouts/EmployerLayout";
 import SeekerLayout from "./layouts/SeekerLayout";
@@ -33,7 +32,6 @@ const App = () => (
     <AuthProvider>
       <JobsProvider>
         <TooltipProvider>
-          <Toaster />
           <Sonner />
           <BrowserRouter>
             <Routes>

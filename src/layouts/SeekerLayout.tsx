@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { SidebarProvider } from "@/components/ui/sidebar";
 import SeekerSidebar from '@/components/SeekerSidebar';
 import Navbar from '@/components/Navbar';
+import { Toaster } from "@/components/ui/toaster";
 
 const SeekerLayout = () => {
   return (
@@ -15,6 +16,7 @@ const SeekerLayout = () => {
             <Outlet />
           </main>
         </div>
+        <Toaster />
       </div>
     </SidebarProvider>
   );

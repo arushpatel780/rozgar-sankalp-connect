@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { SidebarProvider } from "@/components/ui/sidebar";
 import AdminSidebar from '@/components/AdminSidebar';
 import Navbar from '@/components/Navbar';
+import { Toaster } from "@/components/ui/toaster";
 
 const AdminLayout = () => {
   return (
@@ -15,6 +16,7 @@ const AdminLayout = () => {
             <Outlet />
           </main>
         </div>
+        <Toaster />
       </div>
     </SidebarProvider>
   );
