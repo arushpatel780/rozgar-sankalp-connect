@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 const EmployerLayout = () => {
   return (
     <SidebarProvider>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen w-full">
         <Navbar />
         <div className="flex flex-1 w-full">
           <EmployerSidebar />
