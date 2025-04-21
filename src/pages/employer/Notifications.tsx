@@ -1,14 +1,27 @@
 
 import { useState } from 'react';
 import { Bell, Check, X } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
 
+// Define the allowed notification types
+type NotificationType = 'application' | 'expiration' | 'update' | 'feature';
+
+// Type for notifications
+interface Notification {
+  id: string;
+  title: string;
+  message: string;
+  date: string;
+  read: boolean;
+  type: NotificationType;
+}
+
 // Mock notification data for demonstration
-const initialNotifications = [
+const initialNotifications: Notification[] = [
   {
     id: '1',
     title: 'New Application',
@@ -42,16 +55,6 @@ const initialNotifications = [
     type: 'feature'
   }
 ];
-
-// Type for notifications
-interface Notification {
-  id: string;
-  title: string;
-  message: string;
-  date: string;
-  read: boolean;
-  type: 'application' | 'expiration' | 'update' | 'feature';
-}
 
 const Notifications = () => {
   const { user } = useAuth();
@@ -136,7 +139,7 @@ const Notifications = () => {
   };
 
   // Get appropriate badge color for notification type
-  const getNotificationBadge = (type: Notification['type']) => {
+  const getNotificationBadge = (type: NotificationType) => {
     switch (type) {
       case 'application':
         return <Badge>Application</Badge>;
